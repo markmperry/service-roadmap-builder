@@ -1,0 +1,86 @@
+{
+  "serviceName": "Bulk Mail Gateway",
+  "serviceOwner": "Moden Workplace",
+  "serviceExists": true,
+  "purpose": "Provides secure outbound bulk email relay to customers, allowing application generated emails to be sent to members.",
+  "consumers": "Experteq, Customers",
+  "currentStack": "Trend Micro IMSVA running as an x86 VM in our private cloud",
+  "currentHealth": "Attention",
+  "constraints": "Limited billing and reporting, non-engineered SLA",
+  "targetState": "SaaS based Email relay (Twilio, MailGuard, etc)",
+  "targetDrivers": "Legacy IaaS, EOL Platform, Underlying VMware Infrastructure to be replaced by HyperV",
+  "disposition": "Replace",
+  "timeAssessment": "Migrate",
+  "risks": [
+    {
+      "id": 1777882624890.3123,
+      "description": "Trend license maintenance expiry",
+      "eolDate": "Dec 2026",
+      "severity": "Critical"
+    },
+    {
+      "id": 1777883381809.4714,
+      "description": "Underlying VMware infrastructure replacement with HyperV",
+      "eolDate": "Apr 2027",
+      "severity": "Attention"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1777882624890.4922,
+      "component": "Solution Options - Select new platform",
+      "startMonth": "May 2026",
+      "endMonth": "Jun 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777883506640.9385,
+      "component": "Pilot New Solution",
+      "startMonth": "May 2026",
+      "endMonth": "Jun 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777883478178.513,
+      "component": "Service Offering & Commercials Update",
+      "startMonth": "Jul 2026",
+      "endMonth": "Jul 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777883485432.5125,
+      "component": "New Solution Build",
+      "startMonth": "Jul 2026",
+      "endMonth": "Aug 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777883493864.8389,
+      "component": "Customer Migration",
+      "startMonth": "Aug 2026",
+      "endMonth": "Dec 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777883521338.0212,
+      "component": "Decommission Legacy IMSVA",
+      "startMonth": "Jan 2027",
+      "endMonth": "Jan 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    }
+  ],
+  "lastUpdated": "2026-05-04",
+  "_filename": "bulk-mail-gateway.json"
+}

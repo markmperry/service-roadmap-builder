@@ -1,0 +1,86 @@
+{
+  "serviceName": "Network Security Microsegmentation (DC)",
+  "serviceOwner": "Network",
+  "purpose": "Provides east–west traffic control within Experteq‑hosted data centre environments to prevent lateral movement between workloads.\nEnables consistent microsegmentation policy, visibility, and enforcement to reduce breach impact and support APRA CPS 234 / CPS 230 security control expectations.",
+  "consumers": "All Experteq, All customers with DC hosted worklaods, Experteq, Customers",
+  "currentStack": "Software‑defined microsegmentation platforms (DC‑first)\nShortlisted vendors: Zero Networks, ColorTokens, Akamai Guardicore, Illumio\nIntegration with VMware/Hyper‑V estates and core firewall platforms\nCentralised policy management with agent‑based or agentless enforcement (vendor‑dependent)",
+  "currentHealth": "Attention",
+  "constraints": "Vendor cost models and commercial alignment as a managed service\nDependency on clear service design (table‑stakes vs premium tiers) before scale rollout",
+  "targetState": "A standardised, centrally managed microsegmentation service delivered across Experteq data centre environments.\nProvides workload‑level east–west traffic control using software‑defined policy, enabling consistent enforcement, rapid isolation, and reduced blast radius without reliance on legacy network segmentation alone.\nDelivered as a default (“table‑stakes”) security capability for managed customers, with optional advanced policy tiers over time.",
+  "targetDrivers": "Reduce impact and spread of security incidents within DC environments\nMeet and demonstrate APRA CPS 234 / CPS 230 control intent\nCustomer expectation for modern zero‑trust–aligned security foundations\nImprove automation and orchestration for both service delivery and ongoing operational support, reducing manual policy and rule management\nSimplify and automate compliance evidence collection and reporting for both Experteq and customer regulatory and audit requirements",
+  "disposition": "Upgrade",
+  "timeAssessment": "Invest",
+  "risks": [
+    {
+      "id": 1777599317223.11,
+      "description": "Lateral movement risk within DC workloads (Customer raised)",
+      "eolDate": "Dec 2025",
+      "severity": "Attention"
+    },
+    {
+      "id": 1777600082950.661,
+      "description": "Regulatory scrutiny on east–west traffic controls (CPS 234 / CPS 230)",
+      "eolDate": "Ongoing",
+      "severity": "Attention"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1777599317223.8643,
+      "component": "Solution Options and Vendor Seelction",
+      "startMonth": "Feb 2026",
+      "endMonth": "May 2026",
+      "effort": "Medium",
+      "status": "In Progress",
+      "notes": "Zero Networks, ColorTokens, Akamai Guardicore, Illumio"
+    },
+    {
+      "id": 1777600388960.811,
+      "component": "Pilot",
+      "startMonth": "Jun 2026",
+      "endMonth": "Jul 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777600422937.0454,
+      "component": "Service Offering and Commercials Update",
+      "startMonth": "Jul 2026",
+      "endMonth": "Jul 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777600462512.848,
+      "component": "Build",
+      "startMonth": "Aug 2026",
+      "endMonth": "Aug 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777600475455.8115,
+      "component": "Customer Rollout",
+      "startMonth": "Sep 2026",
+      "endMonth": "Sep 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777609298596.297,
+      "component": "Legacy FW Cleanup",
+      "startMonth": "Jan 2027",
+      "endMonth": "Sep 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    }
+  ],
+  "lastUpdated": "2026-05-01",
+  "serviceExists": false,
+  "_filename": "network-security-microsegmentation-dc.json"
+}

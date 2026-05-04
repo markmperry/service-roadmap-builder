@@ -639,43 +639,23 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  const API_URL = 'http://localhost:3001/api/roadmaps';
-
   useEffect(() => {
-    fetch(API_URL)
-      .then(r => r.json())
-      .then(data => {
-        if (Array.isArray(data) && data.length > 0) { setRoadmaps(data); }
-        else { setRoadmaps([emptyRoadmap()]); }
-        setLoaded(true);
-      })
-      .catch(() => { setRoadmaps([emptyRoadmap()]); setLoaded(true); });
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) { setRoadmaps(parsed); setLoaded(true); return; }
+      }
+    } catch (e) {}
+    setRoadmaps([emptyRoadmap()]);
+    setLoaded(true);
   }, []);
 
   useEffect(() => {
     if (!loaded) return;
-    const t = setTimeout(() => {
-      setSaving(true);
-      Promise.all(roadmaps.map(rm => {
-        const filename = rm._filename;
-        if (filename) {
-          return fetch(`${API_URL}/${filename}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(rm),
-          });
-        } else {
-          return fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(rm),
-          }).then(r => r.json()).then(result => {
-            rm._filename = result.saved;
-          });
-        }
-      })).then(() => setTimeout(() => setSaving(false), 400))
-        .catch(() => setSaving(false));
-    }, 1000);
+    const t = setTimeout(async () => {
+      try { setSaving(true); localStorage.setItem(STORAGE_KEY, JSON.stringify(roadmaps)); setTimeout(() => setSaving(false), 600); } catch (e) { setSaving(false); }
+    }, 800);
     return () => clearTimeout(t);
   }, [roadmaps, loaded]);
 
@@ -694,16 +674,7 @@ export default function App() {
   const [copyFeedback, setCopyFeedback] = useState(false);
 
   const addRoadmap = () => { setRoadmaps((prev) => [...prev, emptyRoadmap()]); setActiveIdx(roadmaps.length); setView("edit"); };
-  const deleteRoadmap = () => {
-    if (roadmaps.length <= 1) return;
-    if (!confirm("Delete this roadmap? This will also delete the JSON file.")) return;
-    const rm = roadmaps[activeIdx];
-    if (rm._filename) {
-      fetch(`${API_URL}/${rm._filename}`, { method: 'DELETE' }).catch(() => {});
-    }
-    setRoadmaps((prev) => prev.filter((_, i) => i !== activeIdx));
-    setActiveIdx(Math.max(0, activeIdx - 1));
-  };
+  const deleteRoadmap = () => { if (roadmaps.length <= 1) return; if (!confirm("Delete this roadmap?")) return; setRoadmaps((prev) => prev.filter((_, i) => i !== activeIdx)); setActiveIdx(Math.max(0, activeIdx - 1)); };
 
   const exportJSON = () => { setModal("export"); setCopyFeedback(false); };
   const handleCopy = () => {

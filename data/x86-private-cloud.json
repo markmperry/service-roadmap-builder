@@ -1,0 +1,76 @@
+{
+  "serviceName": "x86 Private Cloud",
+  "serviceOwner": "CloudOps (Infra)",
+  "purpose": "Secure, compliant, and highly available hosting platform for regulated workloads that are not suitable for public cloud.\nIt enables customers to run critical x86 workloads with enterprise‑grade resilience, performance, and governance, integrated with our managed services and hybrid cloud capabilities.",
+  "consumers": "All Experteq, All customers",
+  "currentStack": "Dell PowerEdge R660, VMware vSphere 8.x, IBM FS95 Storage",
+  "currentHealth": "Healthy",
+  "constraints": "VMware-Broadcom licensing model ceases to be available April 1, 2027",
+  "targetState": "Hyper‑V + SCVMM with Azure Arc hybrid control plane",
+  "targetDrivers": "Broadcom-VMware Program change for VCP making it not a viable solution for MSP in our tier.\nCost consolidation\nTechnology standardization (Microsoft)\nImproved Hybrid Cloud integration",
+  "disposition": "Retain",
+  "timeAssessment": "Migrate",
+  "risks": [
+    {
+      "id": 1777597873229.2183,
+      "description": "VMware-Broadcom VCP Program End",
+      "eolDate": "Apr 2027",
+      "severity": "Critical"
+    },
+    {
+      "id": 1777598755687.2043,
+      "description": "Hardware Lifecycle Refresh",
+      "eolDate": "Jan 2029",
+      "severity": "Healthy"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1777597873229.0298,
+      "component": "New Platform Selection",
+      "startMonth": "Jan 2026",
+      "endMonth": "Apr 2026",
+      "effort": "High",
+      "status": "Complete",
+      "notes": "Hyper-V + SCVMM sleected"
+    },
+    {
+      "id": 1777599017717.9053,
+      "component": "Pilot Hyper-V",
+      "startMonth": "Mar 2026",
+      "endMonth": "May 2026",
+      "effort": "High",
+      "status": "In Progress",
+      "notes": ""
+    },
+    {
+      "id": 1777599058069.851,
+      "component": "Hyper-V Platform Build",
+      "startMonth": "May 2026",
+      "endMonth": "Jul 2026",
+      "effort": "High",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777599087294.722,
+      "component": "Workload Migrations",
+      "startMonth": "Jul 2026",
+      "endMonth": "Mar 2027",
+      "effort": "High",
+      "status": "Not Started",
+      "notes": ""
+    },
+    {
+      "id": 1777599113063.796,
+      "component": "Decommission VMware environment",
+      "startMonth": "Apr 2027",
+      "endMonth": "Apr 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": ""
+    }
+  ],
+  "lastUpdated": "2026-05-01",
+  "_filename": "x86-private-cloud.json"
+}
