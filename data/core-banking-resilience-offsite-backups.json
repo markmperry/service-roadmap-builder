@@ -1,0 +1,77 @@
+{
+  "serviceName": "Core Banking Resilience – Offsite Backups",
+  "serviceOwner": "Architecture / CloudOps",
+  "purpose": "Provides secure, immutable offsite backups for core banking platforms to protect against data loss, ransomware, and catastrophic site failure.\nEnsures recoverability of critical banking workloads independent of primary data centre availability, supporting APRA CPS 230 and CPS 234 expectations for data resilience.",
+  "consumers": "All core banking customers hosted by Experteq",
+  "currentStack": "Primary on-site backups within Experteq data centres\nCustomer or platform-specific backup implementations\nLimited standardisation of immutable or air-gapped offsite copies",
+  "currentHealth": "Attention",
+  "constraints": "No consistent offsite backup standard across core banking platforms\nPotential dependence on primary data centre availability\nIncreasing regulatory scrutiny on data survivability and ransomware recovery",
+  "targetState": "A standardised, centrally managed offsite backup capability for all core banking platforms.\nBackups are stored in an isolated environment (logical and administrative separation) with immutability controls.\nOffsite backups are routinely tested and auditable, with clear RPO objectives defined per platform.",
+  "targetDrivers": "APRA CPS 230 operational resilience requirements\nAPRA CPS 234 information security controls\nRansomware and destructive attack resilience\nCustomer and auditor expectations for independent recovery capability",
+  "disposition": "Upgrade",
+  "timeAssessment": "Invest",
+  "risks": [
+    {
+      "id": 1781001001001,
+      "description": "Loss of recoverable data in a site-wide or ransomware incident",
+      "eolDate": "Ongoing",
+      "severity": "Critical"
+    },
+    {
+      "id": 1781001001002,
+      "description": "Audit and regulatory findings due to lack of independent offsite backups",
+      "eolDate": "Ongoing",
+      "severity": "Attention"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1781002002001,
+      "component": "Define Offsite Backup Standards and RPO Requirements",
+      "startMonth": "Jun 2026",
+      "endMonth": "Jul 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Define minimum backup frequency, retention, immutability, and platform coverage"
+    },
+    {
+      "id": 1781002002002,
+      "component": "Solution Options and Architecture Design",
+      "startMonth": "Jul 2026",
+      "endMonth": "Aug 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Evaluate offsite storage, isolation model, and management approach"
+    },
+    {
+      "id": 1781002002003,
+      "component": "Pilot – Core Banking Platform",
+      "startMonth": "Sep 2026",
+      "endMonth": "Oct 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Implement pilot offsite backups for a selected core banking workload"
+    },
+    {
+      "id": 1781002002004,
+      "component": "Operational Runbooks and Testing",
+      "startMonth": "Oct 2026",
+      "endMonth": "Nov 2026",
+      "effort": "Low",
+      "status": "Not Started",
+      "notes": "Document restore procedures and perform verification testing"
+    },
+    {
+      "id": 1781002002005,
+      "component": "Customer Rollout – Core Banking Platforms",
+      "startMonth": "Dec 2026",
+      "endMonth": "Jun 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Progressively enable offsite backups for all core banking customers"
+    }
+  ],
+  "lastUpdated": "2026-05-04",
+  "_filename": "core-banking-resilience-offsite-backups.json",
+  "serviceExists": false
+}

@@ -1,0 +1,76 @@
+{
+  "serviceName": "Core Banking Resilience – Disaster Recovery Capability",
+  "serviceOwner": "Architecture / CloudOps",
+  "purpose": "Provides a defined, tested disaster recovery capability for core banking platforms to ensure service continuity during major outages or site failures.\nEstablishes clear RTO/RPO targets, recovery patterns, and governance aligned to regulatory and customer resilience expectations.",
+  "consumers": "All core banking customers hosted by Experteq",
+  "currentStack": "Platform-dependent DR approaches\nMixed active/passive and restore-based recovery patterns\nLimited standardisation and inconsistent testing cadence",
+  "currentHealth": "Attention",
+  "constraints": "DR designs vary by customer and platform\nRecovery objectives not consistently defined or tested\nHigh cost and complexity without a standard reference architecture",
+  "targetState": "A standardised set of DR reference architectures for core banking platforms.\nDefines clear recovery tiers (e.g. restore-based, warm standby, active/active) with aligned RTO/RPO targets.\nIncludes documented runbooks, testing schedules, and governance oversight.",
+  "targetDrivers": "APRA CPS 230 business continuity and service resilience\nCustomer expectations for banking service availability\nOperational risk reduction and predictable recovery outcomes",
+  "disposition": "Upgrade",
+  "timeAssessment": "Invest",
+  "risks": [
+    {
+      "id": 1782001001001,
+      "description": "Extended outage of core banking services during a major incident",
+      "eolDate": "Ongoing",
+      "severity": "Critical"
+    },
+    {
+      "id": 1782001001002,
+      "description": "Inability to demonstrate DR readiness to regulators or customers",
+      "eolDate": "Ongoing",
+      "severity": "Attention"
+    }
+  ],
+  "actions": [
+    {
+      "id": 1782002002001,
+      "component": "Define DR Recovery Tiers and Objectives",
+      "startMonth": "Jul 2026",
+      "endMonth": "Aug 2026",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Define standard DR tiers with target RTO/RPO aligned to platform criticality"
+    },
+    {
+      "id": 1782002002002,
+      "component": "Reference Architecture and Pattern Design",
+      "startMonth": "Aug 2026",
+      "endMonth": "Sep 2026",
+      "effort": "High",
+      "status": "Not Started",
+      "notes": "Design repeatable DR architecture patterns for core banking platforms"
+    },
+    {
+      "id": 1782002002003,
+      "component": "Pilot DR Implementation",
+      "startMonth": "Oct 2026",
+      "endMonth": "Dec 2026",
+      "effort": "High",
+      "status": "Not Started",
+      "notes": "Implement and validate DR capability for a selected platform"
+    },
+    {
+      "id": 1782002002004,
+      "component": "DR Testing and Governance Framework",
+      "startMonth": "Jan 2027",
+      "endMonth": "Feb 2027",
+      "effort": "Medium",
+      "status": "Not Started",
+      "notes": "Define testing cadence, evidence capture, and governance reporting"
+    },
+    {
+      "id": 1782002002005,
+      "component": "Customer Rollout – DR Capability",
+      "startMonth": "Mar 2027",
+      "endMonth": "Dec 2027",
+      "effort": "High",
+      "status": "Not Started",
+      "notes": "Progressive adoption of standard DR capability across core banking customers"
+    }
+  ],
+  "lastUpdated": "2026-05-04",
+  "_filename": "core-banking-resilience-disaster-recovery-capability.json"
+}
